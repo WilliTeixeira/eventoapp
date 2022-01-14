@@ -15,10 +15,10 @@ public class DataConfiguration {
 	@Bean
 	public DataSource datasource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		dataSource.setUrl("jdbc:mysql://localhost:3306/eventosapp");
-		dataSource.setUsername("root");
-		dataSource.setPassword("willi123");
+		dataSource.setUsername("willi");
+		dataSource.setPassword("willi@123");
 		return dataSource;
 	}
 	
@@ -28,10 +28,9 @@ public class DataConfiguration {
 		adapter.setDatabase(Database.MYSQL);  
 		adapter.setShowSql(true);
 		adapter.setGenerateDdl(true);
-		adapter.setDatabasePlatform("org.hibernate.dialect.MySQLDialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
 		adapter.setPrepareConnection(true);
-		return adapter;
-		
+		return adapter;	
 	}
 	
 }
